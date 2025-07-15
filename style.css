@@ -1,0 +1,224 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+#page1{
+    width: 100%;
+    height: 100vh;
+    background-color: #F3E425;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#page2{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#page1 h1{
+    font-size: 6vw;
+    font-weight: 100;
+    text-align: center;
+    line-height: 5vw;
+    letter-spacing: -3px;
+    position: relative;
+}
+.yellow1{
+    /* background-color: #F3E425; */
+    height: 100vh;
+    width: 100%;
+    background-color: #F3E425;
+    position: absolute;
+    z-index: 10;
+    /* display: none; */
+}
+.video{
+    background-color:#F3E425;
+    /* background-color:aquamarine; */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 9;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+}
+.video video{
+    position: relative;
+    width: 100%;
+    z-index: 9;
+}
+.header{
+    top: 28.9%;
+    font-size: 6vw;
+    font-weight: 100;
+    text-align: center;
+    line-height: 5vw;
+    letter-spacing: -3px;
+    position: fixed;
+    z-index: 10;
+    color:aliceblue;
+    /* display: none; */
+}
+nav{
+    position: absolute;
+    top:2%;
+    left: 0;
+    width: 100%;
+    /* background-color: red; */
+    padding: 1rem 3rem;
+    z-index: 8;
+}
+nav svg{
+    width:100px;
+}
+
+#page2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.elem{
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.elem h1{
+    font-size: 5vw;
+    position: relative;
+    z-index: 9;
+    font-weight: 100;
+    font-style:normal;
+    text-transform: uppercase;
+}
+.moving{
+    /* border: 2px solid black; */
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    /* transition: all ease-in-out .5s; */
+    transform: translateY(-45%) scaleY(0);
+    padding: 1px 0;
+    background-color: #F3E425;
+    transition: all ease .3s;
+    overflow: hidden;
+}
+.moving-in {
+    display: inline-block;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* background-color: #F3E425; */
+    white-space: nowrap;
+    /* width: 20%; */
+}
+.moving .moving-in h5{
+    margin-left: 10px;
+    font-size:18px;
+    font-weight: 500;
+    color: #111;
+    /* background-color: black; */
+    display: inline-block;
+    opacity: 0;
+    font-style:oblique;
+    text-transform: uppercase;
+}
+.elem{
+    cursor: pointer;
+}
+
+.elem:hover .moving{
+    transform: translateY(-45%) scaleY(1);
+}
+.elem:hover .moving-in h5{
+    opacity: 1;
+}
+.elem:hover h1{
+    font-style:italic;
+}
+
+.blur{
+position: absolute;
+    width: 15%;
+    height: 100%;
+    top: 0;
+    left: 15.4%;
+    z-index:7;
+    background: linear-gradient(to right,#f3e525e7,#F3E425,#f3e525e2);
+    box-shadow: 10px 0px 10px #F3E425,-10px 0px 10px #F3E425
+}
+
+@keyframes move{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+
+}
+
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.image-container{
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(400px,1fr));
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+    justify-content: flex-start;
+}
+
+.image{
+    /* border:2px solid #F3E425; */
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #111111e7;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+    opacity: 0;
+    transition: all ease .3s;
+    text-transform: uppercase;
+}
+
+.image img{
+    /* height: 100%; */
+    width: 100%;
+    transition: all ease .3s;
+}
+
+.image:hover .overlay{
+    opacity: 1;
+}
+.image:hover img{
+    scale: 1.1;
+}
